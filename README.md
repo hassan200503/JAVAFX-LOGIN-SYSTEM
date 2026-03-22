@@ -106,7 +106,7 @@ git clone https://github.com/hassan200503/JavaFX-Login-System.git
 2. Navigate into the project folder;
 
 
-cd JavaFX-Login-System
+cd LoginSystem
 
 
 3. Run the project;
