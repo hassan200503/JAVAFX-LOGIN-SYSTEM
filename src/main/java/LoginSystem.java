@@ -5,8 +5,10 @@ import java.util.HashMap;
 import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,8 +16,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-import javafx.scene.control.Hyperlink;
-import javafx.geometry.Pos;
 
 
 
@@ -24,6 +24,7 @@ import javafx.geometry.Pos;
 
 
 public class LoginSystem extends Application{
+    
 
 GridPane root = new GridPane(10,10);  //replace this with GridPane
 
@@ -55,15 +56,17 @@ notification.setStyle("-fx-text-fill:red;  -fx-font-style: italic;");
 
 
 
-Menu(stage);
+Menu(stage); //set as the first window
 
 
-Scene scene = new Scene(root,800,500);
+Scene scene = new Scene(root,1024,768);
 stage.setTitle("Simple login system");
 stage.setScene(scene);
 stage.show();
     
 }
+
+
 
 
 
@@ -75,12 +78,6 @@ private void Menu(Stage stage){
 root.getChildren().clear();
 
 
-Label header = new Label();
-
-
-//header
-header.setText("MAIN MENU");
-header.setStyle("-fx-text-fill: black; -fx-font-size: 24px; -fx-font-weight:bold;");
 
 Button createaccount = new Button("Create account");
 createaccount.setStyle("-fx-font-size: 17px; -fx-text-fill: white; -fx-background-color: blue; -fx-font-weight: bold;");
@@ -144,9 +141,8 @@ Login.setStyle("-fx-font-size: 17px; -fx-text-fill: white; -fx-background-color:
 Login.setOnAction(e -> Login(stage) );
 
 
-root.add(header,0,0);
-root.add(createaccount,0,1);
-root.add(Login,1,1);
+root.add(createaccount,0,0);
+root.add(Login,0,1);
 
 
 
